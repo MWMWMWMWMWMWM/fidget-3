@@ -58,6 +58,10 @@
   <script>
     let totalAmount = parseFloat(localStorage.getItem('totalAmount')) || 0;
 
+    window.onload = function () {
+      displayAmount();
+    }
+
     function addAmount() {
       const input = document.getElementById("amount-input");
       const amount = parseFloat(input.value);
@@ -81,8 +85,8 @@
 </head>
 <body>
   <div class="widget-container">
-    <img id="piggy-image" src="https://github.com/MWMWMWMWMWMWM/my-widget/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202023-10-07%20%D0%B2%2001.18.43.png?raw=true" alt="Piggy Bank">
-    <input type="number" id="amount-input" placeholder="Enter amount">
+    <img id="piggy-image" src="piggy-bank-image.png" alt="Piggy Bank Image">
+    <input id="amount-input" type="number" placeholder="Enter Amount" step="0.01">
     <button id="add-button" onclick="addAmount()">Add</button>
     <div id="amount-display"></div>
   </div>
